@@ -1,5 +1,7 @@
 asgiref
 Django
 djangorestframework
+djangorestframework-gis
 mysqlclient
 stripe
+psycopg2

@@ -1,7 +1,10 @@
+from rest_framework_gis.fields import GeometryField
 from rest_framework import serializers
 from .models import ServiceProvider, Service, Booking, Review
 
 class ServiceProviderSerializer(serializers.ModelSerializer):
+    location = GeometryField()
+
     class Meta:
         model = ServiceProvider
         fields = '__all__'
