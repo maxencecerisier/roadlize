@@ -6,7 +6,7 @@ Roadlize est une application qui permet aux utilisateurs de trouver facilement e
 
 - Django pour le backend
 - Django Rest Framework pour l'API
-- MySQL pour la base de données
+- PostgreSQL pour la base de données
 - Flutter pour le frontend
 - Stripe pour les paiements
 
