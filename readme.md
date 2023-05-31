@@ -17,21 +17,15 @@ Roadlize est une application qui permet aux utilisateurs de trouver facilement e
     git clone https://github.com/username/roadlize.git
     ```
 
-2. Installez les dépendances :
+2. Lancez le projet :
     ```
-    pip install -r requirements.txt
+    docker-compose up
     ```
-
-3. Créez une base de données MySQL et configurez les paramètres de la base de données dans `settings.py`.
-
-4. Appliquez les migrations :
+    
+3. Si besoin, appliquez les modifications :
     ```
-    python manage.py migrate
-    ```
-
-5. Lancez le serveur de développement :
-    ```
-    python manage.py runserver
+    docker-compose exec web python manage.py makemigrations
+    docker-compose exec web python manage.py migrate
     ```
 
 ## Développement
