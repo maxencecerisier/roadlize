@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'service_provider',
     'rest_framework',
     'rest_framework.authtoken',
+    'django.contrib.gis',
 ]
 
 MIDDLEWARE = [
@@ -78,15 +79,12 @@ WSGI_APPLICATION = 'roadlize.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'roadlize',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'sql_mode': 'STRICT_TRANS_TABLES',
-        },
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 

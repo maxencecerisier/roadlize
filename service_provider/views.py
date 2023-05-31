@@ -1,10 +1,12 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from .models import ServiceProvider, Service, Booking, Review
 from .serializers import ServiceProviderSerializer, ServiceSerializer, BookingSerializer, ReviewSerializer
 
 class ServiceProviderViewSet(viewsets.ModelViewSet):
     queryset = ServiceProvider.objects.all()
     serializer_class = ServiceProviderSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
 
 class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
