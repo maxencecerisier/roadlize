@@ -1,6 +1,12 @@
 from rest_framework_gis.fields import GeometryField
 from rest_framework import serializers
-from .models import ServiceProvider, Service, Booking, Review
+from .models import ServiceProvider, Service, Booking, Review, Quote
+
+class QuoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Quote
+        fields = '__all__'
+
 
 class ServiceProviderSerializer(serializers.ModelSerializer):
     location = GeometryField()

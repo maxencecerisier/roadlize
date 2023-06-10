@@ -54,6 +54,14 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.service_provider.name} - {self.rating}"
 
+class Quote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    service_provider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    status = models.CharField(max_length=255, default='Pending')
+    price_estimate = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
+    description = models.TextField(default='Quote Description')
+
 @receiver(post_save, sender=Review)
 def update_service_provider_rating(sender, instance, **kwargs):
     instance.service_provider.calculate_rating()

@@ -2,6 +2,6 @@ asgiref
 Django
 djangorestframework
 djangorestframework-gis
-mysqlclient
 stripe
 psycopg2
+drf-yasg
